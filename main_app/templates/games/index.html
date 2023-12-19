@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Games</h1>
+
+  <div id='games-container'>
+  {% for game in games %}
+    <div class='game-frame'>
+      <span class='game-title'>{{ game.title }}</span>
+      <span class='game-data'>Players: {{ game.players }}</span>
+      <span class='game-data'>Playing time: {{ game.playing_time }}</span>
+      <span class='game-data'>Complexity: {{ game.complexity }} / 5</span>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
