@@ -1,0 +1,95 @@
+:root {
+  /*===== COLORS =====*/
+  --body-bg-col: #bbb;
+  --main-col: #333;
+  --nav-bg-col: #777;
+  --nav-link-bg-hover-col: #333;
+  --nav-link-col: #bbb;
+  --nav-link-hover-col: white;
+  --nav-name-col: #333;
+
+  /*===== RULES =====*/
+  --nav-box-shadow: 0 0 1.25vmin black;
+}
+
+
+/*===== GLOBAL =====*/
+
+* {
+  box-sizing: border-box;
+  cursor: default;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: var(--body-bg-col);
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+
+/*===== NAV =====*/
+
+nav {
+  align-items: center;
+  background-color: var(--nav-bg-col);
+  box-shadow: var(--nav-box-shadow);
+  display: flex;
+  height: 8vmin;
+  justify-content: space-between;
+  padding: 0 2vmin;
+}
+
+#nav-name {
+  color: var(--nav-name-col);
+  font-size: 3vmin;
+  font-weight: bold;
+}
+
+.nav-link {
+  border-radius: 0.5vmin;
+  color: var(--nav-link-col);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2vmin;
+  padding: 0.25vmin 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  width: 12vmin;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-link-bg-hover-col);
+  color: var(--nav-link-hover-col);
+  font-weight: bold;
+}
+
+
+/*===== MAIN =====*/
+
+main {
+  color: var(--main-col);
+  padding: 3vmin 16vmin 0;
+}
+
+main > h1 {
+  border-bottom: 3px double var(--nav-bg-col);
+  display: block;
+  font-size: 4.5vmin;
+}
+
+main p {
+  font-size: 1.85vmin;
+  margin-top: 3vmin;
+}
+
+
+/*===== RESPONSIVE =====*/
+
+@media only screen and (orientation: portrait) {
+  main {
+    padding: 3vmin 8vmin 0;
+  }
+}
