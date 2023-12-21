@@ -9,9 +9,6 @@
   --nav-link-col: #bbb;
   --nav-link-hover-col: white;
   --nav-name-col: #333;
-
-  /*===== RULES =====*/
-  --nav-box-shadow: 0 0 1.25vmin black;
 }
 
 
@@ -42,7 +39,7 @@ a, a * {
 nav {
   align-items: center;
   background-color: var(--nav-bg-col);
-  box-shadow: var(--nav-box-shadow);
+  box-shadow: 0 0 1.25vmin black;
   display: flex;
   height: 8vmin;
   justify-content: space-between;
@@ -51,7 +48,6 @@ nav {
 
 #nav-name {
   color: var(--nav-name-col);
-  cursor: pointer;
   font-size: 3vmin;
   font-weight: bold;
   transition: 0.1s ease-in-out;
