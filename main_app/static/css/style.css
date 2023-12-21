@@ -3,6 +3,7 @@
   --body-bg-col: #bbb;
   --main-col: #333;
   --main-transparent-overlay: #3333;
+  --main-transparent-overlay-hover: #3335;
   --nav-bg-col: #777;
   --nav-link-bg-hover-col: #333;
   --nav-link-col: #bbb;
@@ -29,7 +30,9 @@ body {
   overscroll-behavior: none;
 }
 
-a {
+a, a * {
+  color: inherit;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -61,7 +64,6 @@ nav {
 .nav-link {
   border-radius: 0.5vmin;
   color: var(--nav-link-col);
-  cursor: pointer;
   display: inline-block;
   font-size: 2vmin;
   padding: 0.25vmin 0;
@@ -105,9 +107,18 @@ main p {
 .game-frame {
   background-color: var(--main-transparent-overlay);
   border-radius: 1vmin;
+  display: block;
   height: 20vmin;
   margin-bottom: 3vmin;
   padding: 1vmin 1.5vmin;
+}
+
+a.game-frame {
+  transition: 0.15s ease-in-out;
+}
+
+a.game-frame:hover {
+  background-color: var(--main-transparent-overlay-hover);
 }
 
 .game-title {
