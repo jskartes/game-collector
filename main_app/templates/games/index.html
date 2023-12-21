@@ -5,7 +5,7 @@
 
   <div id='games-container'>
   {% for game in games %}
-    <a class='game-frame' href='/games/{{ game.id }}'>
+    <a class='game-frame' href='{% url "games_detail" %}'>
       <span class='game-title'>{{ game.title }}</span>
       <span class='game-data'>Players: {{ game.players }}</span>
       <span class='game-data'>Playing time: {{ game.playing_time }}</span>

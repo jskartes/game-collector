@@ -12,11 +12,11 @@
 
 <body>
   <nav>
-    <a id='nav-name' href='/'>Game Collector</a>
+    <a id='nav-name' href='{% url "home" %}'>Game Collector</a>
     <div>
-      <a class='nav-link' href='/about'>About</a>
-      <a class='nav-link' href='/games/create'>Add Game</a>
-      <a class='nav-link' href='/games'>All Games</a>
+      <a class='nav-link' href='{% url "about" %}'>About</a>
+      <a class='nav-link' href='{% url "games_create" %}'>Add Game</a>
+      <a class='nav-link' href='{% url "games_index" %}'>All Games</a>
     </div>
   </nav>
 
