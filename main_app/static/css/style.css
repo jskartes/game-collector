@@ -33,6 +33,64 @@ a, a * {
   text-decoration: none;
 }
 
+form {
+  margin: 0 auto;
+  width: 70%;
+}
+
+form div {
+  display: grid;
+  gap: 2vmin;
+  grid-template-columns: 20% 1fr;
+  margin-bottom: 2vmin;
+}
+
+form div:first-of-type {
+  margin-top: 4vmin;
+}
+
+form div:last-of-type {
+  margin: 2vmin 0 4vmin;
+}
+
+form div > label {
+  align-items: center;
+  display: flex;
+  font-size: 2vmin;
+  font-weight: bold;
+  justify-content: flex-end;
+}
+
+form div > input {
+  border: none;
+  border-radius: 0.5vmin;
+  font-size: 1.75vmin;
+  padding: 0.5vmin 1vmin;
+}
+
+form div > input:focus {
+  outline: none;
+}
+
+form input[type='submit'] {
+  background-color: var(--main-transparent-overlay);
+  border: none;
+  border-radius: 0.5vmin;
+  color: var(--body-bg-col);
+  cursor: pointer;
+  font-size: 1.85vmin;
+  margin-left: calc(50% - 10vmin);
+  padding: 0.5vmin 0;
+  transition: 0.1s ease-in-out;
+  width: 20vmin;
+}
+
+form input[type='submit']:hover {
+  background-color: var(--nav-link-bg-hover-col);
+  color: var(--nav-link-hover-col);
+  font-weight: bold;
+}
+
 
 /*===== NAV =====*/
 
