@@ -13,3 +13,6 @@ class Game(models.Model):
     
     def get_absolute_url(self):
         return reverse('games_detail', kwargs={'game_id': self.id})
+
+    class Meta:
+        ordering = ['title']

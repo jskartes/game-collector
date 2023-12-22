@@ -226,7 +226,7 @@ a.game-frame:hover {
   font-weight: bold;
 }
 
-.edit:hover {
+.game-buttons a.edit:hover {
   background-color: var(--edit);
 }
 
