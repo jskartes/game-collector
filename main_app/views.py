@@ -25,3 +25,12 @@ class GameCreate(CreateView):
     model = Game
     fields = '__all__'
     template_name = 'games/create.html'
+
+class GameUpdate(UpdateView):
+    model = Game
+    fields = '__all__'
+    template_name = 'games/create.html'
+
+class GameDelete(DeleteView):
+    model = Game
+    success_url = '/games'

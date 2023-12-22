@@ -1,6 +1,8 @@
 :root {
   /*===== COLORS =====*/
   --body-bg-col: #bbb;
+  --delete: #400;
+  --edit: #008;
   --main-col: #333;
   --main-transparent-overlay: #3333;
   --main-transparent-overlay-hover: #3335;
@@ -165,6 +167,7 @@ main p {
   height: 20vmin;
   margin-bottom: 3vmin;
   padding: 1vmin 1.5vmin;
+  position: relative;
 }
 
 a.game-frame {
@@ -186,6 +189,49 @@ a.game-frame:hover {
   display: block;
   font-size: 2vmin;
   margin-top: 0.5vmin;
+}
+
+.game-buttons {
+  bottom: 1.5vmin;
+  left: 1.5vmin;
+  position: absolute;
+}
+
+.game-buttons form {
+  display: inline-block;
+  width: 12vmin;
+}
+
+.game-buttons form > input[type='submit'] {
+  margin-left: unset;
+}
+
+.game-buttons a,
+.game-buttons form > input[type='submit'] {
+  background-color: var(--main-transparent-overlay);
+  border-radius: 0.5vmin;
+  color: inherit;
+  display: inline-block;
+  font-size: 1.75vmin;
+  margin-right: 1vmin;
+  padding: 0.25vmin 0;
+  text-align: center;
+  transition: 0.1s ease-in-out;
+  width: 12vmin;
+}
+
+.game-buttons a:hover,
+.game-buttons form > input[type='submit']:hover {
+  color: var(--nav-link-hover-col);
+  font-weight: bold;
+}
+
+.edit:hover {
+  background-color: var(--edit);
+}
+
+.game-buttons form > input[type='submit'].delete:hover {
+  background-color: var(--delete);
 }
 
 

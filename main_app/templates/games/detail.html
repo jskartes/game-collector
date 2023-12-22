@@ -8,6 +8,13 @@
       <span class='game-data'>Players: {{ game.players }}</span>
       <span class='game-data'>Playing time: {{ game.playing_time }}</span>
       <span class='game-data'>Complexity: {{ game.complexity }} / 5</span>
+      <div class='game-buttons'>
+        <a class='edit' href='{% url "games_update" game.id %}'>Edit</a>
+        <form action='{% url "games_delete" game.id %}' method='POST'>
+          {% csrf_token %}
+          <input class='delete' type='submit' value='Delete'/>
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}
