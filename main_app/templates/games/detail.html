@@ -16,5 +16,18 @@
         </form>
       </div>
     </div>
+
+    <div class='game-session-list'>
+      <h1>Sessions</h1>
+      {% for session in game.gamesession_set.all %}
+        <div class='game-session'>
+          <span>{{ session.date }}</span>
+          <span>{{ session.playing_time }}</span>
+          <span><strong>Winner:</strong> {{ session.winner }}</span>
+        </div>
+      {% empty %}
+        <p>No {{ game.title }} sessions logged</p>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}

@@ -25,4 +25,4 @@ class GameSession(models.Model):
     winner = models.CharField(max_length=100)
 
     def __str__(self):
-        return f'{self.playing_time} session on {self.date}'
+        return f'{self.playing_time} {self.game.title} session on {self.date}'

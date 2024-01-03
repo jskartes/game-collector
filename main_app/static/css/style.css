@@ -234,6 +234,24 @@ a.game-frame:hover {
   background-color: var(--delete);
 }
 
+.game-session-list > h1 {
+  border-bottom: 1px solid var(--nav-bg-col);
+  display: block;
+  font-size: 3vmin;
+}
+
+.game-session {
+  margin-top: 1vmin;
+}
+
+.game-session:first-of-type {
+  margin-top: 2vmin;
+}
+
+.game-session span {
+  margin-right: 4vmin;
+}
+
 
 /*===== RESPONSIVE =====*/
 
