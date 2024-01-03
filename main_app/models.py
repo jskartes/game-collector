@@ -26,3 +26,6 @@ class GameSession(models.Model):
 
     def __str__(self):
         return f'{self.playing_time} {self.game.title} session on {self.date}'
+    
+    class Meta:
+        ordering = ['date']

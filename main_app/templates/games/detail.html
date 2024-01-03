@@ -29,5 +29,11 @@
         <p>No {{ game.title }} sessions logged</p>
       {% endfor %}
     </div>
+
+    <form action='{% url "add_session" game.id %}' method='POST'>
+      {% csrf_token %}
+      {{ session_form }}
+      <input type='submit' value='Add Session'/>
+    </form>
   </div>
 {% endblock %}

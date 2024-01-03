@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import CreateView, DeleteView, UpdateView
+from .forms import GameSessionForm
 from .models import Game
 
 
@@ -17,9 +18,19 @@ def games_index(request):
 
 def games_detail(request, game_id):
     game = Game.objects.get(id=game_id)
+    session_form = GameSessionForm()
     return render(request, 'games/detail.html', {
-        'game': game
+        'game': game,
+        'session_form': session_form
     })
+
+def add_session(request, game_id):
+    form = GameSessionForm(request.POST)
+    if form.is_valid():
+        new_session = form.save(commit=False)
+        new_session.game_id = game_id
+        new_session.save()
+    return redirect('games_detail', game_id=game_id)
 
 class GameCreate(CreateView):
     model = Game

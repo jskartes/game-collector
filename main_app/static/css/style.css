@@ -43,7 +43,7 @@ form {
 form div {
   display: grid;
   gap: 2vmin;
-  grid-template-columns: 20% 1fr;
+  grid-template-columns: 21% 1fr;
   margin-bottom: 2vmin;
 }
 

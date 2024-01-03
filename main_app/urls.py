@@ -23,6 +23,11 @@ urlpatterns = [
         name='games_detail'
     ),
     path(
+        'games/<int:game_id>/add_session',
+        views.add_session,
+        name='add_session'
+    ),
+    path(
         'games/create/',
         views.GameCreate.as_view(),
         name='games_create'
