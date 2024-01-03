@@ -16,3 +16,13 @@ class Game(models.Model):
 
     class Meta:
         ordering = ['title']
+
+
+class GameSession(models.Model):
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    date = models.DateField()
+    playing_time = models.CharField(max_length=100)
+    winner = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.playing_time} session on {self.date}'
