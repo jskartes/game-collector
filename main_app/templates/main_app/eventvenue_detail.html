@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ eventvenue.name }} Details</h1>
+
+  <div id='games-container'>
+    <div class='game-frame'>
+      <span class='game-data'>Max Players: {{ eventvenue.max_players }}</span>
+      <div class='game-buttons'>
+        <a class='edit' href='{% url "venues_update" eventvenue.id %}'>Edit</a>
+        <form action='{% url "venues_delete" eventvenue.id %}' method='POST'>
+          {% csrf_token %}
+          <input class='delete' type='submit' value='Delete'/>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

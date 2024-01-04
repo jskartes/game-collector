@@ -42,4 +42,39 @@ urlpatterns = [
         views.GameDelete.as_view(),
         name='games_delete'
     ),
+    path(
+        'games/<int:game_id>/include_venue/<int:venue_id>/',
+        views.include_venue,
+        name='include_venue'
+    ),
+    path(
+        'games/<int:game_id>/exclude_venue/<int:venue_id>/',
+        views.exclude_venue,
+        name='exclude_venue'
+    ),
+    path(
+        'venues/',
+        views.EventVenueList.as_view(),
+        name='venues_index'
+    ),
+    path(
+        'venues/<int:pk>/',
+        views.EventVenueDetail.as_view(),
+        name='venues_detail'
+    ),
+    path(
+        'venues/create/',
+        views.EventVenueCreate.as_view(),
+        name='venues_create'
+    ),
+    path(
+        'venues/<int:pk>/update/',
+        views.EventVenueUpdate.as_view(),
+        name='venues_update'
+    ),
+    path(
+        'venues/<int:pk>/delete/',
+        views.EventVenueDelete.as_view(),
+        name='venues_delete'
+    ),
 ]

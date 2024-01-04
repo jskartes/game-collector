@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Venue List</h1>
+
+  <div id='games-container'>
+    {% for venue in eventvenue_list %}
+      <a class='game-frame' href='{% url "venues_detail" venue.id %}'>
+        <span class='game-title'>{{ venue.name }}</span>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -36,4 +36,46 @@
       <input type='submit' value='Add Session'/>
     </form>
   </div>
+
+  <div class='venues-list'>
+    <div class='included-venues'>
+      <h1>{{ game.title }} events</h1>
+      {% if game.venues.count %}
+        {% for venue in game.venues.all %}
+          <p style='display: inline-block'>
+            {{ venue.name }} (capacity: {{ venue.max_players }})
+          </p>
+          <form
+            action='{% url "exclude_venue" game.id venue.id %}'
+            method='POST'
+          >
+            {% csrf_token %}
+            <button type='submit'>Exclude Venue</button>
+          </form>
+        {% endfor %}
+      {% else %}
+        <p>No venues with events</p>
+      {% endif %}
+    </div>
+
+    <div class='excluded-venues'>
+      <h1>Available venues</h1>
+      {% if venues.count %}
+        {% for venue in venues.all %}
+          <p style='display: inline-block'>
+            {{ venue.name }} (capacity: {{ venue.max_players }})
+          </p>
+          <form
+            action='{% url "include_venue" game.id venue.id %}'
+            method='POST'
+          >
+            {% csrf_token %}
+            <button type='submit'>Include Venue</button>
+          </form>
+        {% endfor %}
+      {% else %}
+        <p>All venues offer events</p>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
